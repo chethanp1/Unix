@@ -1,0 +1,20 @@
+BEGIN{
+	printf("Sno\tname\tdesignation\tbasic\tDA\tHRA\tgross\n");
+}
+{
+	sno++;
+	if($5<10000)
+	{
+		da=0.45*$5;
+		hra=0.15*$5
+		gross=da+hra+$5;
+}
+else
+{
+	da=0.50*$5;
+	hra=0.20*$5;
+	gross=da+hra+$5;
+}
+	printf("%d\t%s\t%s\t%d\t%d\t%d\t%d\t\n",sno,$2,$3,$5,da,hra,gross);
+}
+
